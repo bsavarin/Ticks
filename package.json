@@ -1,0 +1,27 @@
+{
+    "author": "bsavarin11@hotmail.com",
+    "dependencies": {},
+    "keywords": [],
+    "name": "ticks",
+    "pebble": {
+        "displayName": "TICKS",
+        "enableMultiJS": true,
+        "messageKeys": [],
+        "projectType": "native",
+        "resources": {
+            "media": []
+        },
+        "sdkVersion": "3",
+        "targetPlatforms": [
+            "aplite",
+            "basalt",
+            "chalk",
+            "diorite"
+        ],
+        "uuid": "7c19d1f5-a3a5-4cae-9c23-8929e4136007",
+        "watchapp": {
+            "watchface": false
+        }
+    },
+    "version": "1.0.0"
+}
