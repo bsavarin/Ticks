@@ -59,11 +59,13 @@ static void layer_update_proc(Layer *layer, GContext *ctx) {
       case TICK_QUARTER:  break ;
      }
    
+ }
+   
    #ifdef PBL_RECT
    // Draw another rect in the middle using border colour to hide the inner parts of the minute ticks
    draw_dithered_rect(ctx, grect_inset(tick_layer_bounds, GEdgeInsets(MINOR_TICK_LENGTH)), background_colour, foreground_colour, DITHER_50_PERCENT);
    #endif            
- } 
+  
   
    for (int tickIdx = 0  ;  tickIdx < 60  ;  ++tickIdx)
     switch (tickTypeMap[tickIdx])
