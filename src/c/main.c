@@ -82,15 +82,18 @@ static void layer_update_proc(Layer *layer, GContext *ctx) {
       case TICK_QUARTER: //Hours ticks - 3, 6, 9 & 12 o'clock
         if(tickMarks == 0 || tickMarks == 1) {
         int iTick = tickIdx*6;                              
+          if (iTick == 0 || iTick == 180) {
             if (iTick == 0) {rect_point.x = halfW + originX; rect_point.y = originY;}
             if (iTick == 180) {rect_point.x = halfW; rect_point.y = halfH*2 - MAJOR_TICK_LENGTH + originY;}
               graphics_fill_rect(ctx, GRect(rect_point.x-MAJOR_TICK_WIDTH-1, rect_point.y, MAJOR_TICK_WIDTH, MAJOR_TICK_LENGTH), 0, GCornerNone);
               graphics_fill_rect(ctx, GRect(rect_point.x, rect_point.y, MAJOR_TICK_WIDTH, MAJOR_TICK_LENGTH), 0, GCornerNone); 
-                     
+          }
+          if (iTick == 90 || iTick == 270) {          
             if (iTick == 90) {rect_point.x = halfW*2 - MAJOR_TICK_LENGTH + originX; rect_point.y = halfH + originX;}
             if (iTick == 270) {rect_point.x = originX; rect_point.y = halfH + originX;}
               graphics_fill_rect(ctx, GRect(rect_point.x, rect_point.y-MAJOR_TICK_WIDTH-1, MAJOR_TICK_LENGTH, MAJOR_TICK_WIDTH), 0, GCornerNone);
               graphics_fill_rect(ctx, GRect(rect_point.x, rect_point.y, MAJOR_TICK_LENGTH, MAJOR_TICK_WIDTH), 0, GCornerNone); 
+           }
         }
       break ;
     }
